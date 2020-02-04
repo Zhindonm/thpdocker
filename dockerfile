@@ -27,7 +27,7 @@ RUN cp -r /usr/local/thp/xinetd.d /etc/xinetd.d
 RUN chmod +x iptables.rules
 
 # Copy start script
-ADD start.sh /
+ADD start.sh .
 RUN chmod +x start.sh
 # RUN /etc/rc.d/init.d/portmap start
  
