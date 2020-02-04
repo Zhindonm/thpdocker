@@ -20,7 +20,7 @@ RUN chmod 700 /var/log/thpot
 WORKDIR /usr/local/thp
 ADD thp/ .
 ADD logs /var/log/thpot
-# RUN cp -r /usr/local/thp/xinetd.d /etc/xinetd.d
+RUN cp -r /usr/local/thp/xinetd.d /etc/xinetd.d
 
 
 # RUN ./thp/iptables.rules
