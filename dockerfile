@@ -13,7 +13,6 @@ RUN yum install iptables portmap xinetd -y
 # RUN yum install git
 
 # Setup environment
-
 RUN mkdir -p /var/log/thpot 
 RUN chown nobody:nobody /var/log/thpot
 RUN chmod 700 /var/log/thpot
@@ -21,7 +20,6 @@ RUN chmod 700 /var/log/thpot
 # Copy local thp files to container
 WORKDIR /usr/local/thp
 ADD thp/ .
-ADD logs /var/log/thpot
 RUN cp -r /usr/local/thp/xinetd.d /etc/
 
 RUN chmod +x iptables.rules
