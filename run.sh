@@ -1,6 +1,12 @@
 #!/bin/bash
 git pull
+echo "New version pulled from git"
+echo ""
 docker build -t zhindonm/thpdocker .
-docker run --name thp --cap-add=NET_ADMIN -d -it -p 22:22 zhindonm/thpdocker bash ./start.sh
-echo "Container started in dettached mode - use:"
-echo "\t docker attach thp"
+echo "Docker container BUILT"
+echo ""
+docker run --name thp --cap-add=NET_ADMIN -d -it -p 22:22 zhindonm/thpdocker
+docker exec thp start.sh
+echo "Container started in dettached mode"
+echo "use:        docker attach thp"
+echo ""
