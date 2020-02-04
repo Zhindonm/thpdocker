@@ -9,7 +9,7 @@ RUN yum clean all
 RUN yum update
 
 #Dependencies
-RUN yum install iptables -y
+RUN yum install iptables portmap -y
 # RUN yum install git
 
 # Setup environment
@@ -19,16 +19,16 @@ RUN chown nobody:nobody /var/log/thpot
 RUN chmod 700 /var/log/thpot
 
 # Copy local thp files to container
-
 WORKDIR /usr/local/thp
 ADD thp/ .
 ADD logs /var/log/thpot
 RUN cp -r /usr/local/thp/xinetd.d /etc/xinetd.d
 
-
-
 RUN chmod +x iptables.rules
-# RUN ./iptables.rules
+
+# Copy start script
+ADD start.sh /
+RUN chmod +x start.sh
 # RUN /etc/rc.d/init.d/portmap start
  
 EXPOSE 22
