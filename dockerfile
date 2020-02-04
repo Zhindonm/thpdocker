@@ -1,0 +1,17 @@
+FROM centos:5
+
+
+COPY ~/thp /user/local
+COPY ~/thp/xinetd.d/* /etc/xinetd.d
+
+RUN mkdir -p /var/log/thpot 
+RUN chwon nobody:nobody /var/log/thpot
+RUN chmod 700 /var/log/thpot
+ADD logs /var/log/thpot
+
+WORKDIR /usr/local/thp
+
+# RUN ./thp/iptables.rules
+# RUN /etc/rc.d/init.d/portmap start
+ 
+
