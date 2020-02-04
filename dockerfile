@@ -1,10 +1,10 @@
 FROM centos:5
 
-RUN dhclient
-RUN yum update
-RUN yum install git
+RUN ping google.com
+# RUN yum update
+# RUN yum install git
 
-RUN git clone https://github.com/Zhindonm/thp
+# RUN git clone https://github.com/Zhindonm/thp
 
 RUN mkdir -p /var/log/thpot 
 RUN chwon nobody:nobody /var/log/thpot
