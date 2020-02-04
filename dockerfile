@@ -1,5 +1,6 @@
 FROM centos:5
 
+RUN dhclient
 RUN yum update
 RUN yum install git
 
