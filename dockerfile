@@ -9,15 +9,15 @@ RUN yum clean all
 RUN yum update
 # RUN yum install git
 
-# RUN git clone https://github.com/Zhindonm/thp
-
+# Setup environment
 RUN mkdir -p /var/log/thpot 
 RUN chown nobody:nobody /var/log/thpot
 RUN chmod 700 /var/log/thpot
 
-ADD thp/xinetd.d/* /etc/xinetd.d/
+# Copy local thp files to container
 ADD ./thp /usr/local/thp
 ADD logs /var/log/thpot
+RUN cp -r /usr/local/thp/xinetd.d /etc/xinetd.d
 
 WORKDIR /usr/local/thp
 
