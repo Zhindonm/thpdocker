@@ -7,7 +7,7 @@ FROM centos:5
 # RUN git clone https://github.com/Zhindonm/thp
 
 RUN mkdir -p /var/log/thpot 
-RUN chwon nobody:nobody /var/log/thpot
+RUN chown nobody:nobody /var/log/thpot
 RUN chmod 700 /var/log/thpot
 ADD logs /var/log/thpot
 
