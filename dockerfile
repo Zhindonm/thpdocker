@@ -17,7 +17,7 @@ RUN chmod 700 /var/log/thpot
 # Copy local thp files to container
 ADD ./thp /usr/local/thp
 ADD logs /var/log/thpot
-RUN cp -r /usr/local/thp/xinetd.d /etc/xinetd.d
+# RUN cp -r /usr/local/thp/xinetd.d /etc/xinetd.d
 
 WORKDIR /usr/local/thp
 
