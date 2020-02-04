@@ -1,5 +1,6 @@
 FROM centos:5
 
+RUN yum update
 RUN yum install git
 
 RUN git clone https://github.com/Zhindonm/thp
