@@ -1,12 +1,15 @@
 FROM centos:5
 
-# Setup vault repos
+# Setup vault repos to be able to install dependencies
 RUN find /etc/yum.repos.d/ -type f -exec sed -i 's/#baseurl/baseurl/g' {} \;
 RUN find /etc/yum.repos.d/ -type f -exec sed -i 's/mirrorlist/#mirrorlist/g' {} \;
 RUN find /etc/yum.repos.d/ -type f -exec sed -i 's/mirror.centos.org\/centos\/$releasever/vault.centos.org\/5.0/g' {} \;
 RUN find /etc/yum.repos.d/ -type f -exec sed -i 's/$basearch/x86_64/g' {} \;
 RUN yum clean all
 RUN yum update
+
+#Dependencies
+RUN yum install iptables -y
 # RUN yum install git
 
 # Setup environment
@@ -23,7 +26,9 @@ ADD logs /var/log/thpot
 RUN cp -r /usr/local/thp/xinetd.d /etc/xinetd.d
 
 
-# RUN ./thp/iptables.rules
+
+RUN chmod +x iptables.rules
+# RUN ./iptables.rules
 # RUN /etc/rc.d/init.d/portmap start
  
-
+EXPOSE 22
