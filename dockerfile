@@ -1,8 +1,7 @@
 FROM centos:5
 
 
-COPY ~/thp /user/local
-COPY ~/thp/xinetd.d/* /etc/xinetd.d
+RUN git clone https://github.com/Zhindonm/thp
 
 RUN mkdir -p /var/log/thpot 
 RUN chwon nobody:nobody /var/log/thpot
