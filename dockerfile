@@ -1,6 +1,6 @@
 FROM centos:5
 
-RUN ping google.com
+# RUN ping google.com
 # RUN yum update
 # RUN yum install git
 
