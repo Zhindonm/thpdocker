@@ -13,8 +13,8 @@ service thp-httpd
 	server			= /usr/local/thp/logthis
 	server_args		= http
 	nice			= 10
-	disable			= yes
-        instances               = 10
+	disable			= no
+    instances       = 10
 	per_source		= 1
 
 }

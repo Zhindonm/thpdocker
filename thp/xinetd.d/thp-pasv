@@ -13,8 +13,8 @@ service thp-pasv
 	server			= /usr/local/thp/logthis
 	server_args		= nullresp
 	nice			= 10
-	disable			= yes
-        instances               = 1
+	disable			= no
+    instances       = 1
 	per_source		= 1
 
 }

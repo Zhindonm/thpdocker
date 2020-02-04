@@ -13,8 +13,8 @@ service thp-ftp
 	server			= /usr/local/thp/logthis
 	server_args		= ftp
 	nice			= 10
-	disable			= yes
-        instances               = 10
+	disable			= no
+    instances       = 10
 	per_source		= 1
 
 }

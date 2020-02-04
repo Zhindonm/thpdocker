@@ -12,9 +12,9 @@ service thp
 	user			= nobody
 	protocol		= tcp
 	server			= /usr/local/thp/logthis
-        server_args             = shell
+    server_args     = shell
 	port			= 6635
-	disable 		= yes
+	disable 		= no
 	instances		= 10
 	per_source		= 1
 }

@@ -54,7 +54,7 @@ GOODNET="192.168.1.0/24"
 
 # Available legitimate services. Comment this out if you don't want to use any.
 #
-GOOD_SVCS="80,22"
+# GOOD_SVCS=""
 
 # Comma separated list of ports that you have custom tcp listeners hanging out. 
 # Comment this out if you don't want to use any.
