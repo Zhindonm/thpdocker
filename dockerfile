@@ -11,7 +11,7 @@ RUN yum update
 
 # RUN git clone https://github.com/Zhindonm/thp
 
-ADD ./thp /thp
+ADD ./thp thp
 RUN mkdir -p /var/log/thpot 
 RUN chown nobody:nobody /var/log/thpot
 RUN chmod 700 /var/log/thpot
