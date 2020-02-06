@@ -4,6 +4,7 @@
 echo "Initialized start script"
 echo "Loading iptables configuration: ./iptables.rules"
 ./iptables.rules
+iptables-save
 echo ""
 echo "Initializing portmap service: service portmap start"
 service portmap start
@@ -14,3 +15,6 @@ echo ""
 echo "Initializing xinetd service: service xinetd start"
 service xinetd start
 echo "Start script DONE"
+
+sysctl net.ipv4.conf.all.forwarding=1
+iptables -P FORWARD ACCEPT

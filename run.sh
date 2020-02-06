@@ -1,5 +1,4 @@
 #!/bin/bash
-git pull
 echo "New version pulled from git"
 echo ""
 docker build -t zhindonm/thpdocker .

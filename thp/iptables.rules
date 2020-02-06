@@ -50,7 +50,7 @@ EXTIF="eth0"
 # is authorized to used the GOOD_SVCS, defined below. Comment this out if you 
 # don't want to use any.
 #
-GOODNET="192.168.1.0/24"
+# GOODNET="192.168.1.0/24"
 
 # Available legitimate services. Comment this out if you don't want to use any.
 #
